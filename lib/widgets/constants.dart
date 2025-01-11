@@ -1,2 +1,2 @@
-const primaryColor = 0xff62FCD7;
-const notesBox = 'notes_box';
+const kPrimaryColor = 0xff62FCD7;
+const kNotesBox = 'notes_box';

@@ -19,13 +19,13 @@ class CustomTextField extends StatelessWidget {
         }
       },
       maxLines: maxLines,
-      cursorColor: Color(primaryColor),
+      cursorColor: Color(kPrimaryColor),
       decoration: InputDecoration(
         hintText: hintText,
         hintStyle: TextStyle(color: Colors.grey),
         border: buildBorder(),
         enabledBorder: buildBorder(),
-        focusedBorder: buildBorder(Color(primaryColor)),
+        focusedBorder: buildBorder(Color(kPrimaryColor)),
       ),
     );
   }
