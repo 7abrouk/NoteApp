@@ -1,4 +1,4 @@
-part of 'notes_cubit.dart';
+
 
 import 'package:note_app/models/note_model.dart';
 
