@@ -12,12 +12,14 @@ class NotesViewBody extends StatefulWidget {
 }
 
 class _NotesViewBodyState extends State<NotesViewBody> {
-  @override
-  void initstate() {
+
+@override
+  void initState() {
     BlocProvider.of<NotesCubit>(context).fetchNotes();
     super.initState();
   }
 
+  @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 24),
