@@ -26,12 +26,14 @@ class NoteItem extends StatelessWidget {
           children: [
             ListTile(
               title: Text(
+                overflow: TextOverflow.ellipsis,
                 note.title,
                 style: TextStyle(color: Colors.black, fontSize: 26),
               ),
               subtitle: Padding(
                 padding: const EdgeInsets.only(top: 16, bottom: 16),
                 child: Text(
+                  overflow: TextOverflow.ellipsis,
                   note.subTitle,
                   style: TextStyle(
                       color: Colors.black.withOpacity(0.4), fontSize: 18),

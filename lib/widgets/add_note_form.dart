@@ -4,6 +4,7 @@ import 'package:intl/intl.dart';
 import 'package:note_app/cubits/add_note_cubit.dart';
 import 'package:note_app/cubits/add_note_state.dart';
 import 'package:note_app/models/note_model.dart';
+import 'package:note_app/widgets/color_list_view.dart';
 import 'package:note_app/widgets/custom_button.dart';
 import 'package:note_app/widgets/custom_text_field.dart';
 
@@ -41,12 +42,20 @@ class _AddNoteFormState extends State<AddNoteForm> {
             height: 15,
           ),
           CustomTextField(
+            validator: (value) {
+              if (value?.isEmpty ?? true) {
+                return 'Field is required';
+              } else {
+                return null;
+              }
+            },
             onSaved: (value) {
               subTitle = value;
             },
             maxLines: 10,
             hintText: 'Content',
           ),
+          ColorListView(),
           SizedBox(
             height: 32,
           ),

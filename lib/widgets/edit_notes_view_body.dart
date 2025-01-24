@@ -15,11 +15,13 @@ class EditNotesViewBody extends StatefulWidget {
 
 class _EditNotesViewBodyState extends State<EditNotesViewBody> {
   String? title, content;
+ 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 24),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(
             height: 50,
@@ -39,19 +41,30 @@ class _EditNotesViewBodyState extends State<EditNotesViewBody> {
             height: 32,
           ),
           CustomTextField(
+
+            controller: TextEditingController(text: widget.note.title),
               onChanged: (value) {
                 title = value;
               },
-              hintText: widget.note.title),
+              hintText: 'title',
+              maxLines: 1,),
           SizedBox(
-            height: 15,
+            height: 10,
           ),
-          CustomTextField(
-            onChanged: (value) {
-              content = value;
-            },
-            hintText: widget.note.subTitle,
-            maxLines: 10,
+          Text(widget.note.date,style: TextStyle(color: Colors.grey),),
+          SizedBox(
+            height: 10,
+          ),
+          Expanded(
+            child: CustomTextField(
+              controller: TextEditingController(text: widget.note.subTitle),
+              onChanged: (value) {
+                
+                content = value;
+              },
+              hintText: "your note",
+              maxLines: 10,
+            ),
           ),
         ],
       ),
